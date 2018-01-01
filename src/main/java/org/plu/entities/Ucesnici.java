@@ -26,6 +26,8 @@ public class Ucesnici implements Serializable{
     @NotBlank
     private String indeks;
 
+    public  Ucesnici(){}
+
     public Ucesnici(String ime, String prezime, String indeks) {
         this.ime = ime;
         this.prezime = prezime;
