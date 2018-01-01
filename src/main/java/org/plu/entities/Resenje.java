@@ -28,6 +28,10 @@ public class Resenje implements Serializable{
     @Column(length=1000)
     private String resenje;
 
+    public Resenje() {
+
+    }
+
     public Resenje(String student, String resenje) {
         this.student = student;
         this.resenje = resenje;
