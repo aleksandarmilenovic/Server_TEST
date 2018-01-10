@@ -19,6 +19,7 @@ public class ResenjeControler {
 
     @GetMapping("/new/{student}/{resenje}")
     public Resenje addResult(@PathVariable(value = "student") String student, @PathVariable(value = "resenje") String resenje){
+        resenje.replace('*',';');
         Resenje resenje1 = new Resenje(student,resenje);
 
         return resenjeRepository.save(resenje1);

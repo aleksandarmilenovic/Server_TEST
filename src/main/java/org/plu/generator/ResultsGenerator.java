@@ -1,18 +1,14 @@
 package org.plu.generator;
 
-import org.aspectj.weaver.ast.Test;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import javax.script.ScriptException;
+public class ResultsGenerator {
 
-public class TestGenerator {
+    public ResultsGenerator(){}
 
-    public TestGenerator(){}
-
-    public String generateTask(){
+    public boolean isItGood(String result){
 
         String task = "";
         String s = null;
@@ -20,7 +16,7 @@ public class TestGenerator {
 
             // run the Unix "ps -ef" command
             // using the Runtime exec method:
-            Process p = Runtime.getRuntime().exec("python src/main/resources/1.py");
+            Process p = Runtime.getRuntime().exec("python src/main/resources/2.py ''"+result+"''");
 
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(p.getInputStream()));
@@ -38,11 +34,11 @@ public class TestGenerator {
             // read any errors from the attempted command
             System.out.println("Here is the standard error of the command (if any):\n");
             while ((s = stdError.readLine()) != null) {
-              //  task = task + s;
+                //  task = task + s;
                 System.out.println(s);
             }
 
-          //  System.exit(0);
+            //  System.exit(0);
         }
         catch (IOException e) {
             System.out.println("exception happened - here's what I know: ");
@@ -50,10 +46,6 @@ public class TestGenerator {
             System.exit(-1);
         }
 
-        return task;
-
+        return false;
     }
-
-
-
 }

@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="Web Application: Archive">
+    <output-path>$PROJECT_DIR$/out/artifacts/Web_Application__Archive</output-path>
+    <root id="archive" name="Web Application_ Archive.jar" />
+  </artifact>
+</component>
